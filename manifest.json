@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Platzi Sidebar Hider",
+  "name": "Platzen",
   "version": "1.3.0",
-  "description": "Oculta el sidebar de comentarios en Platzi. Toggle desde popup, atajo de teclado o botón flotante en la clase.",
+  "description": "Modo enfoque para Platzi: oculta el sidebar de comentarios y expande el video. Toggle desde popup, atajo o botón flotante.",
   "permissions": ["storage"],
   "icons": {
     "16": "icons/icon16.png",
@@ -20,7 +20,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Platzi Sidebar Hider",
+    "default_title": "Platzen",
     "default_icon": {
       "16": "icons/icon16.png",
       "32": "icons/icon32.png",
