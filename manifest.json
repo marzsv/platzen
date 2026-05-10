@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Platzi Sidebar Hider",
+  "version": "1.3.0",
+  "description": "Oculta el sidebar de comentarios en Platzi. Toggle desde popup, atajo de teclado o botón flotante en la clase.",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://platzi.com/*", "*://*.platzi.com/*"],
+      "css": ["hide-comments.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Platzi Sidebar Hider",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "toggle-hide": {
+      "suggested_key": {
+        "default": "Alt+Shift+H",
+        "mac": "Alt+Shift+H"
+      },
+      "description": "Mostrar u ocultar el sidebar de comentarios"
+    }
+  }
+}

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        --bg: #0f1711;
+        --bg-elev: #182018;
+        --fg: #f1f3f0;
+        --fg-dim: #98a09a;
+        --accent: #98ca3f;
+        --border: #232a23;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        width: 280px;
+        font-size: 13px;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--border);
+      }
+      header img {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+      }
+      .title {
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.1;
+      }
+      .subtitle {
+        font-size: 11px;
+        color: var(--fg-dim);
+        margin-top: 2px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px;
+      }
+      .row label {
+        cursor: pointer;
+        user-select: none;
+      }
+      .row .desc {
+        font-size: 11px;
+        color: var(--fg-dim);
+        margin-top: 3px;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 36px;
+        height: 20px;
+        flex-shrink: 0;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        inset: 0;
+        background: #2a3329;
+        border-radius: 999px;
+        transition: background 0.15s ease;
+      }
+      .slider::before {
+        content: "";
+        position: absolute;
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        top: 3px;
+        background: #f1f3f0;
+        border-radius: 50%;
+        transition: transform 0.15s ease;
+      }
+      .switch input:checked + .slider {
+        background: var(--accent);
+      }
+      .switch input:checked + .slider::before {
+        transform: translateX(16px);
+        background: #0f1711;
+      }
+      .switch input:focus-visible + .slider {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        border-top: 1px solid var(--border);
+        background: var(--bg-elev);
+        font-size: 11px;
+        color: var(--fg-dim);
+      }
+      kbd {
+        background: #232a23;
+        border: 1px solid #2f3a2f;
+        border-bottom-width: 2px;
+        border-radius: 4px;
+        padding: 1px 6px;
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 10px;
+        color: var(--fg);
+      }
+      #status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent);
+        display: inline-block;
+        margin-right: 6px;
+        vertical-align: middle;
+      }
+      #status-dot.off {
+        background: var(--fg-dim);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="icons/icon48.png" alt="" />
+      <div>
+        <div class="title">Platzi Sidebar Hider</div>
+        <div class="subtitle">Más espacio para el video</div>
+      </div>
+    </header>
+
+    <div class="row">
+      <div>
+        <label for="toggle">Ocultar sidebar de comentarios</label>
+        <div class="desc">Expande el video al ancho completo</div>
+      </div>
+      <label class="switch" aria-label="Ocultar sidebar de comentarios">
+        <input type="checkbox" id="toggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <div class="row" style="border-top: 1px solid var(--border)">
+      <div>
+        <label for="btn-toggle">Botón flotante en clases</label>
+        <div class="desc">Atajo visual para alternar el sidebar</div>
+      </div>
+      <label class="switch" aria-label="Mostrar botón flotante">
+        <input type="checkbox" id="btn-toggle" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <footer>
+      <span><span id="status-dot"></span><span id="status-text">activo</span></span>
+      <span>Atajo: <kbd id="shortcut">⌥⇧H</kbd></span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+html:not(.psh-show) [class*="page_Classes__tabs__"] {
+  display: none !important;
+}
+
+html:not(.psh-show) [class*="page_Classes___"] {
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-areas: "info" "main" !important;
+  max-width: 100% !important;
+}
+
+#psh-toggle-btn {
+  all: unset;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2147483647;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(15, 23, 17, 0.85);
+  color: #f1f3f0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    opacity 0.15s ease;
+  opacity: 0.6;
+}
+#psh-toggle-btn:hover {
+  opacity: 1;
+  background: rgba(15, 23, 17, 0.95);
+  border-color: #98ca3f;
+  transform: translateY(-1px);
+}
+#psh-toggle-btn:active {
+  transform: translateY(0);
+}
+#psh-toggle-btn[data-state="visible"] {
+  color: #98ca3f;
+}
+#psh-toggle-btn svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}

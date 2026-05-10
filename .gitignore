@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies (in case a build step is added later)
+node_modules/
+
+# Build / packaging output for Chrome Web Store
+dist/
+build/
+*.zip
+*.crx
+*.pem
+
+# Local reference material (saved Platzi page used to inspect the DOM)
+Variables y acumuladores en algoritmos de resolución de problemas.html
+Variables y acumuladores en algoritmos de resolución de problemas_files/
+
+# Local environment
+.env
+.env.local
