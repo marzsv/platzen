@@ -1,0 +1,3 @@
+const SVG_VISIBLE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="15" y1="4" x2="15" y2="20"/></svg>`;
+
+const SVG_HIDDEN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="15" y1="4" x2="15" y2="20" stroke-dasharray="2 2" opacity="0.4"/><line x1="4" y1="20" x2="20" y2="4" stroke="#ff7a7a" stroke-width="2"/></svg>`;

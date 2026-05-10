@@ -40,6 +40,8 @@ chrome.storage.onChanged.addListener((changes, area) => {
   if (changes[BTN_KEY]) renderBtn(changes[BTN_KEY].newValue);
 });
 
+const KEY_SYMBOLS = { Command: "⌘", Ctrl: "⌃", Alt: "⌥", Shift: "⇧" };
+
 chrome.commands.getAll((commands) => {
   const cmd = commands.find((c) => c.name === "toggle-hide");
   if (!cmd || !cmd.shortcut) {
@@ -47,9 +49,6 @@ chrome.commands.getAll((commands) => {
     return;
   }
   shortcutEl.textContent = cmd.shortcut
-    .replace(/Command/g, "⌘")
-    .replace(/Ctrl/g, "⌃")
-    .replace(/Alt/g, "⌥")
-    .replace(/Shift/g, "⇧")
+    .replace(/Command|Ctrl|Alt|Shift/g, (k) => KEY_SYMBOLS[k])
     .replace(/\+/g, "");
 });

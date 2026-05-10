@@ -14,7 +14,7 @@
     {
       "matches": ["*://platzi.com/*", "*://*.platzi.com/*"],
       "css": ["hide-comments.css"],
-      "js": ["content.js"],
+      "js": ["icons.js", "content.js"],
       "run_at": "document_start"
     }
   ],
